@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+}
+
+.wallet-section {
+    margin-bottom: 30px;
+}
+
+.wallet-section.connected {
+    opacity: 0.7;
+}
+
+.wallet-status {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.app-section {
+    margin-top: 30px;
+}
+
+.app-section.hidden {
+    display: none;
+}
+
+.switch-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    width: 200px;
+    height: 100px;
+    background: #e0e0e0;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.switch.on {
+    background: #4caf50;
+}
+
+.switch-slider {
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.switch.on .switch-slider {
+    transform: translateX(100px);
+}
+
+.switch-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.switch.on .switch-label {
+    color: white;
+}
+
+.info-section {
+    margin: 30px 0;
+}
+
+.status-text {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.address-text {
+    font-size: 0.85em;
+    color: #666;
+    word-break: break-all;
+    font-family: 'Courier New', monospace;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-toggle {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-toggle:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+}
+
+.btn-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tx-status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tx-status.pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.tx-status.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.tx-status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .switch {
+        width: 150px;
+        height: 75px;
+    }
+    
+    .switch-slider {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .switch.on .switch-slider {
+        transform: translateX(75px);
+    }
+}
+
+

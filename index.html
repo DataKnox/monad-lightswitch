@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Switch - Monad Testnet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔦 Light Switch</h1>
+        <p class="subtitle">Monad Testnet - Toggle requires 0.5 MON</p>
+        
+        <div id="wallet-section" class="wallet-section">
+            <button id="connect-btn" class="btn btn-primary">Connect Phantom Wallet</button>
+            <p id="wallet-status" class="wallet-status">Not connected</p>
+            <p class="wallet-hint" style="font-size: 0.85em; color: #666; margin-top: 10px;">
+                💡 Connect your wallet, then switch to Monad Testnet using Phantom's network dropdown if needed
+            </p>
+        </div>
+        
+        <div id="app-section" class="app-section hidden">
+            <div class="switch-container">
+                <div id="switch" class="switch">
+                    <div class="switch-label">OFF</div>
+                    <div class="switch-slider"></div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <p id="contract-status" class="status-text">Loading contract state...</p>
+                <p id="contract-address" class="address-text"></p>
+            </div>
+            
+            <button id="toggle-btn" class="btn btn-toggle" disabled>Toggle Switch (0.5 MON)</button>
+            
+            <div id="tx-status" class="tx-status"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script>
+        // Wait for ethers to be available before loading app.js
+        if (typeof ethers === 'undefined') {
+            console.error('ethers.js library failed to load');
+        } else {
+            console.log('ethers.js loaded successfully, version:', ethers.version);
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
