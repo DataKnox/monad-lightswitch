@@ -29,10 +29,17 @@ contract LightSwitch {
         return isOn;
     }
 
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
     /**
      * @dev Allow owner to withdraw funds
      */
     function withdraw() public {
-        payable(msg.sender).transfer(address(this).balance);
+        require(msg.sender == owner, "Only owner can withdraw");
+        payable(owner).transfer(address(this).balance);
     }
 }
